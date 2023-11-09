@@ -8,7 +8,7 @@ header ("Cache-Control: no-cache, must-revalidate ");
 /////////////////////////////
 
 // Ubicación del Proyecto
-$PROYECTO ='dinamica_\tpFinal_pizzeria';
+$PROYECTO ='tpFinal_pizzeria';
 $ROOT =$_SERVER['DOCUMENT_ROOT']."/$PROYECTO/";
 // $ROOT = "/export/home/gustavo.oliveros/public_html_lamptec/Slash-14/";
 include_once($ROOT.'Util/funciones.php');

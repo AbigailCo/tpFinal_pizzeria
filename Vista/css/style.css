@@ -12,15 +12,6 @@ table.dataTable td {
 
 }
 
-footer {
-    background-color:  #040d41;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
 
 /* Estilo para el contenedor principal */
 .logo-github {
@@ -49,3 +40,24 @@ footer {
     font-size: 14px;
     color: #333; /* Color de texto oscuro */
 }
+
+    .footer {
+        position: relative;
+        background-color: #053c03c9;
+        color: #ffffff;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .footer a {
+        text-decoration: none;
+        color: #ffffff;
+        text-align: center;
+    }
+
+
+    .github-logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 5px;
+    }
