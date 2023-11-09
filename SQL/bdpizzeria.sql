@@ -12,8 +12,13 @@ START TRANSACTION;
 SET time_zone = "+00:00";
 
 
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
--- extencion de Base de datos: `bdcarritocompras` otorgado por la catedra
+-- Base de datos: `bdcarritocompras`
 --
 
 -- --------------------------------------------------------
@@ -260,6 +265,8 @@ INSERT INTO `menurol` (`idmenu`, `idrol`) VALUES
 -- Estructura de tabla para la tabla `producto`
 --
 
+
+-- --------------------------------------------------------
 CREATE TABLE `producto` (
   `idproducto` bigint(20) NOT NULL,
   `pronombre` varchar(250) NOT NULL,
@@ -279,8 +286,6 @@ INSERT INTO `producto` (`idproducto`, `pronombre`, `prodetalle`, `procantstock`)
 (5, 'Sillon Gamer Pc Reclinable Ergonomica Postural Giratoria', '10250///Es gamer: Sí<br>\nEs ergonómica: Sí<br>\nCon altura regulable: Sí<br>\nEs giratoria: Sí<br>\nCon respaldo reclinable: Sí<br>\nCon apoyabrazos: Sí<br>\nCon ruedas: Sí<br>', 100),
 (6, 'Teclado gamer T-Dagger Bora T-TGK315 QWERTY T-Dagger Red español color blanco con luz RGB.', '200000///Este teclado T-Dagger de alto rendimiento permite que puedas disfrutar de horas ilimitadas de juegos. Está diseñado especialmente para que puedas expresar tanto tus habilidades como tu estilo. Podrás mejorar tu experiencia de gaming, ya seas un aficionado o todo un experto y hacer que tus jugadas alcancen otro nivel.', 287),
 (7, 'Laptop gamer Legion 5 6ta Gen (15.6\", AMD)', '500000///<b>Rendimiento gamer definitivo. Autonomía de la batería excepcional.</b>\r\nDicen que nos pasamos la vida haciendo concesiones. Dicen que no se puede tener un gran rendimiento y una batería que dure mucho en la misma computadora. Cuentan que una laptop para gaming enfocada al gran rendimiento tiene que ser grande y pesada. Se equivocan. Ya puedes disfrutar de un rendimiento para gaming de elite en una laptop delgada y liviana con una duración de la batería increíble.', 20);
-
--- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `rol`
@@ -319,12 +324,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`idusuario`, `usnombre`, `uspass`, `usmail`, `usdeshabilitado`) VALUES
-(1, 'root', '85df15fe22809f41007697ac39cce710', 'root@mail.com', '0000-00-00 00:00:00'),
-(2, 'Gustavo', '85df15fe22809f41007697ac39cce710', 'gusa05@gmail.com', '0000-00-00 00:00:00'),
-(3, 'Empleado', '85df15fe22809f41007697ac39cce710', 'empleado@empleado.com', '0000-00-00 00:00:00'),
-(4, 'Test', 'fc03ac0b2d51c8a17769953c245ef1e0', 'test@test.com', '2022-11-16 22:09:49'),
-(6, 'Jose', 'c9c540c6a2266a1fb8b6f5c2500c1342', 'deimoss2018@gmail.com', '0000-00-00 00:00:00'),
-(7, 'Gonza', '85df15fe22809f41007697ac39cce710', 'gonza@mail.com', '0000-00-00 00:00:00');
+(1, 'abi', '25d55ad283aa400af464c76d713c07ad', 'abi@mail.com', '0000-00-00 00:00:00'),
+(2, 'mel', '25d55ad283aa400af464c76d713c07ad', 'mel@gmail.com', '0000-00-00 00:00:00'),
+(3, 'fran', '25d55ad283aa400af464c76d713c07ad', 'fran@empleado.com', '0000-00-00 00:00:00'),
+(4, 'santi', '25d55ad283aa400af464c76d713c07ad', 'santi@test.com', '2022-11-16 22:09:49'),
+(6, 'repo', '25d55ad283aa400af464c76d713c07ad', 'repo2018@gmail.com', '0000-00-00 00:00:00'),
+(7, 'cliente', '25d55ad283aa400af464c76d713c07ad', 'cliente@mail.com', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 

@@ -34,7 +34,7 @@ if($session->validar()){
     
     <script src="../lib/DataTables-1.13.1/js/jquery.dataTables.min.js"></script>
     <script src="../lib/DataTables-1.13.1/js/dataTables.bootstrap5.min.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
     <title><?php echo $titulo ?></title>
 </head>
 <body class="d-flex flex-column min-vh-100">

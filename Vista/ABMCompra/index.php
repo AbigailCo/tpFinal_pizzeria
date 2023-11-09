@@ -7,7 +7,7 @@ include_once "../Estructura/headerSeguro.php";
 <!-- Contenido -->
 <main class="col-12 my-3 mx-auto w-100 max">
     <!-- TABLA -->
-    <h2>ABM Compras</h2>
+    <h2>Historial de compras</h2>
     <button class="btn btn-secondary my-2" onclick="recargar();">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
             <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />

@@ -35,16 +35,16 @@ foreach ($arregloRoles as $rol) {
 ?>
 
 <!-- Navbar -->
-<nav class="navbar navbar-dark bg-dark sticky-top navbar-expand-lg">
+<nav class="navbar navbar-light bg-light sticky-top navbar-expand-lg">
     <div class="container-fluid max">
-        <a class="navbar-brand fw-bold" href="../Home/index.php"><img src="../img/LOGO.png" alt="" class="img-fluid mb-1" style="max-width:100px;"></a>
+        <a class="navbar-brand fw-bold" href="../Home/index.php"><img src="../img/logo_pizza.png" alt="" class="img-fluid mb-1" style="max-width:200px;"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse d-flex align-items-end justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="btn text-light" data-bs-toggle="offcanvas" href="#menu-dinamico" role="button" aria-controls="offcanvas"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list mb-1" viewBox="0 0 16 16">
+                    <a class="btn text-dark" data-bs-toggle="offcanvas" href="#menu-dinamico" role="button" aria-controls="offcanvas"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-list mb-1" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                         </svg>&nbsp;Menu</a>
                 </li>
@@ -55,11 +55,11 @@ foreach ($arregloRoles as $rol) {
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="menu-dinamico" aria-labelledby="menu-dinamico-label">
     <div class="offcanvas-header">
-        <h1 class="offcanvas-title text-center fw-5" id="menu-dinamico-label"><img src="../img/LOGO_BLACK.png" class="col-10 img-fluid" alt=""></h1>
+        <h1 class="offcanvas-title text-center fw-5" id="menu-dinamico-label"><img src="../img/logo_pizza.png" class="col-10 img-fluid" alt=""></h1>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <h4>¡Bienvenido, <?php echo $arreglo[0]->getNombre() ?>!</h4>
+        <h4>¡Como va, <?php echo $arreglo[0]->getNombre() ?>!</h4>
         <hr>
         <?php echo $menu; ?>
         <hr>

@@ -11,3 +11,41 @@ table.dataTable td {
     transition: 0.5s;
 
 }
+
+footer {
+    background-color:  #040d41;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilo para el contenedor principal */
+.logo-github {
+    background-color: #f8f8f8;
+    padding: 10px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para el enlace */
+.logo-github a {
+    text-decoration: none;
+    color: #0366d6; /* Color típico de los enlaces en GitHub */
+}
+
+/* Estilo para el logotipo de GitHub */
+.github-logo {
+    width: 20px; /* Ajusta el tamaño según sea necesario */
+    height: 20px;
+    margin-right: 5px; /* Espaciado entre el logotipo y el texto */
+}
+
+/* Estilo para el texto adicional */
+.logo-github p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333; /* Color de texto oscuro */
+}

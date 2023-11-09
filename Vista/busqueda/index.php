@@ -11,7 +11,7 @@ if(isset($param["q"])){
 $combo = "";
 if(isset($arreglo)){
     foreach($arreglo as $producto){
-        $imagen = "../../Control/Subidas/". md5($producto->getId()) . ".jpg";
+        $imagen = "../../Control/img_productos/". md5($producto->getId()) . ".jpg";
         $imagen = (file_exists($imagen)) ? $imagen : "../img/product-placeholder.jpg";
 
         $detalle = explode("///",$producto->getDetalle());
