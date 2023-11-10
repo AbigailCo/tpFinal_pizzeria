@@ -14,6 +14,7 @@ table.dataTable td {
 
 body{
     background-image: url(../img/patron.jpg);
+    background-size: 40%;
 }
 /* Estilo para el contenedor principal */
 .logo-github {
