@@ -12,7 +12,9 @@ table.dataTable td {
 
 }
 
-
+body{
+    background-image: url(../img/patron.jpg);
+}
 /* Estilo para el contenedor principal */
 .logo-github {
     background-color: #f8f8f8;
