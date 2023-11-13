@@ -55,8 +55,8 @@ $colecRecientes[] = $colecProductos[count($colecProductos) - 3];
 
                 echo
                 '<div class="col-12 col-md-4 mb-3"><a class="text-dark text-decoration-none" href="../Producto/index.php?id='. $colecProductos[$productoKey]->getId() .'">
-                <div class="card" style="width: 18rem;height:450px">
-                    <img src="'. $imagen .'" class="card-img-top" alt="' . $colecProductos[$productoKey]->getNombre() . '">
+                <div class="card" style="width: 18rem;height: 29rem">
+                    <img src="'. $imagen .'" class="card-img-top" alt="' . $colecProductos[$productoKey]->getNombre() . '" style="width: 100%; height: 60%;">
                     <div class="card-body">
                         <p class="card-title">' . $colecProductos[$productoKey]->getNombre() . '</p>
                         <h4>$'.$precio.'</h4>
@@ -78,8 +78,8 @@ $colecRecientes[] = $colecProductos[count($colecProductos) - 3];
 
                 echo
                 '<div class="col-12 col-md-4 mb-3"><a class="text-dark text-decoration-none" href="../Producto/index.php?id='. $producto->getId() .'">
-                <div class="card" style="width: 18rem;height:450px">
-                    <img src="'.$imagen.'" class="card-img-top" alt="' . $producto->getNombre() . '">
+                <div class="card" style="width: 18rem;height:30rem">
+                    <img src="'.$imagen.'" class="card-img-top" alt="' . $producto->getNombre() . '" style="width: 100%; height: 60%;">
                     <div class="card-body">
                         <p class="card-title">' . $producto->getNombre() . '</p>
                         <h4>$'.$precio.'</h4>

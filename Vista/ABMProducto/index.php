@@ -64,7 +64,7 @@ include_once "../Estructura/headerSeguro.php";
                             </div>
                             <div class="col-12 mb-2">
                                 <label for="cantstock" class="form-label">Cantidad de Stock</label>
-                                <input type="number" class="form-control" name="cantstock" id="cantstock" min="0">
+                                <input type="number" class="form-control" name="cantstock" id="cantstock" min="1">
                                 <div class="invalid-feedback" id="feedback-cantstock"></div>
                             </div>
                             <div class="col-12 mb-2">

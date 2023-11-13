@@ -6,7 +6,7 @@ include_once "../../configuracion.php";
 $session = new Session();
 $seguro = true;
 if(!$session->validar() || !$session->tienePermiso()){
-    header("Location:../Home/index.php?error=1");
+    header("Location:../Home/index.php?error=AccesoNoAutorizado");
 }
 
 ?>
