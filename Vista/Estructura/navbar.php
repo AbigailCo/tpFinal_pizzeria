@@ -64,10 +64,6 @@ foreach ($arregloRoles as $rol) {
         <?php echo $menu; ?>
         <hr>
         <div class="col-12 mb-1 mx-2">
-            <a href="../Perfil/index.php
-            " class="text-decoration-none text-dark">Editar Perfil</a>
-        </div>
-        <div class="col-12 mb-1 mx-2">
             <a href="../perfil/accion/cerrarSesion.php" class="text-decoration-none text-danger">Cerrar Sesión</a>
         </div>
     </div>
