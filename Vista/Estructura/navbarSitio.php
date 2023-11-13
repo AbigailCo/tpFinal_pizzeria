@@ -31,7 +31,7 @@
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="../Perfil/index.php">Editar Perfil</a></li>
+                      
                             <li><a class="dropdown-item text-danger" href="../Perfil/accion/cerrarSesion.php">Cerrar Sesión</a></li>
                         </ul>
                     </li>';
