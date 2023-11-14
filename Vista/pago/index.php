@@ -48,14 +48,14 @@ if (isset($list) && count($list) > 0) {
                 <div class="row mb-4">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="nombre" name="nombre" class="form-control" required />
+                      <input type="text" id="nombre" name="nombre" class="form-control" pattern="^[a-zA-Z]+$" required />
                       <label class="form-label" for="nombre">Nombre</label>
                       <div class="invalid-feedback" id="feedback-nombre"></div>
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="apellido" name="apellido" class="form-control" required />
+                      <input type="text" id="apellido" name="apellido" class="form-control" pattern="^[a-zA-Z\']+([a-zA-Z\']+)?$" required />
                       <label class="form-label" for="apellido">Apellido</label>
                       <div class="invalid-feedback" id="feedback-apellido"></div>
                     </div>
@@ -100,7 +100,7 @@ if (isset($list) && count($list) > 0) {
                   </div>
                   <div class="col-3">
                     <div class="form-outline">
-                      <input type="password" id="cvv" name="cvv" class="form-control" maxlength="4" />
+                      <input type="password" id="cvv" name="cvv" class="form-control" maxlength="3" />
                       <label class="form-label" for="cvv">CVV</label>
                       <div class="invalid-feedback" id="feedback-cvv"></div>
                     </div>

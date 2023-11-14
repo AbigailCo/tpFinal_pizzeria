@@ -1,4 +1,14 @@
+/*agregue validaciones*/
 $(document).ready(function () {
+
+    $.validator.addMethod("soloLetras", function (value) {
+        return /^[a-zA-Z\s]+$/.test(value);
+    }, "Solo se permiten letras");
+    
+    $("#nombre, #apellido").rules("add", {
+        soloLetras: true
+    });
+
     $.validator.addMethod("formatoVencimiento", function (value) {
         return /^(0[1-9]|1[0-2])\/?([0-9]{4}|[0-9]{2})$/.test(value);
     }, "Formato MM/AA (ejemplo: 03/23)");
@@ -7,20 +17,33 @@ $(document).ready(function () {
     $.validator.addMethod("formatoTarjeta", function (value) {
         return /^\d{16}$/.test(value);
     }, "Formato: 0000000000000000");
+
+    $.validator.addMethod("formatoCVV", function (value) {
+         return /^\d{3}$/.test(value);
+     }, "Formato: 000");
+
+     $("#cvv").rules("add", {
+        formatoCVV: true
+    });
+
+    
 })
 $("#form-abm").validate({
     rules: {
         nombre: {
             required: true,
+            soloLetras: true,
         },
         apellido: {
             required: true,
+            soloLetras: true,
         },
         direccion: {
             required: true,
         },
         titular: {
             required: true,
+            soloLetras: true,
         },
         numero: {
             required: true,
@@ -32,6 +55,7 @@ $("#form-abm").validate({
         },
         cvv: {
             required: true,
+            formatoCVV: true,
         },
     },
     messages: {

@@ -7,7 +7,6 @@ $seguro = false;
 if($session->validar()){
     $iniciada = true;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
