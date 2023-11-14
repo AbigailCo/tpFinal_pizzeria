@@ -15,10 +15,16 @@ foreach ($list as $elem){
     $nuevoElem["cantstock"] = $elem->getCantStock();
 
 
+
+    $detalle = explode("///", $elem->getDetalle());
+    $nuevoElem["detalle"] = isset($detalle[1]) ? $detalle[1] : "";
+
+/*
     $detalle = explode("///",$elem->getDetalle());
 
-    $nuevoElem["detalle"] = $detalle[1];
+    $nuevoElem["detalle"] = $detalle[1];*/
     $nuevoElem["precio"] = $detalle[0];
+
 
 
     $nuevoElem["imagen"] = '<a href="../../Control/img_productos/'. md5($elem->getId()) .'.jpg" class="btn btn-primary">Ver</a>';

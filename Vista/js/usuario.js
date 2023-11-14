@@ -12,7 +12,7 @@ function mostrarError(contenidoError) {
         '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
     );
 }
-
+//se ejecuta cuando el DOM se cargo, se inicializa datatable y se agregan validaciones con jquery validator
 $(document).ready(function() {
     var table = $("#tabla").DataTable({
         responsive: true,
@@ -37,7 +37,17 @@ $(document).ready(function() {
             },
         ],
     });
-
+// aca personalizo la validacion del email agregandosela al plugin JQuery Validate
+    $.validator.addMethod(
+        "customEmailValidation",
+        function(value, element) {
+            // Devuelve true si el correo electrónico es válido, y false si no lo es
+            var pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return this.optional(element) || pattern.test(value);
+        },
+        "Ingrese un correo electrónico válido"
+    );    
+//agrego el metodo diferentes al jquery validate
     $.validator.addMethod(
         "diferentes",
         function() {
@@ -61,6 +71,8 @@ $(document).ready(function() {
     );
 });
 
+//aca se aplican las reglas de validacion definidas previamente en el form 
+
 $("#form-abm").validate({
     rules: {
         nombre: {
@@ -68,6 +80,7 @@ $("#form-abm").validate({
         },
         mail: {
             required: true,
+            customEmailValidation: true,
         },
         pass: {
             required: true,
@@ -79,7 +92,7 @@ $("#form-abm").validate({
         },
         mail: {
             required: "Obligatorio",
-            email: "Debe ingresar un correo electrónico válido",
+            customEmailValidation: "Debe ingresar un correo electrónico válido",
         },
         pass: {
             required: "Obligatorio",
@@ -100,6 +113,11 @@ $("#form-abm").validate({
     success: function(element) {
         $(element).addClass("is-valid");
     },
+
+    //aca se utiliza el plugin JQuery validate para hacer la validacion del form
+    //especificamos reglas de validacion y msjs de error 
+    // ""  ""      como se manejan msjs de error y exito
+
     submitHandler: function(e) {
         if ($("#pass").val() != null && $("#pass").val() != "") {
             $("#pass").val(md5($("#pass").val()));
@@ -132,6 +150,7 @@ $("#form-abm").validate({
     },
 });
 
+//aca agrego reglas adicionales a los campos pass y nombre (estan definidas mas arriba)
 $("#pass").rules("add", {
     formatoPass: true,
     diferentes: true,
