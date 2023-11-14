@@ -21,7 +21,7 @@ foreach ($list as $elem){
     $nuevoElem["precio"] = $detalle[0];
 
 
-    $nuevoElem["imagen"] = '<a href="../../Control/img_productos/'. md5($elem->getId()) .'.jpg" class="btn btn-primary">Ver</a>';
+    $nuevoElem["imagen"] = '<a href="../../Control/img_productos/'. md5($elem->getId()) .'.jpg" class="btn btn-secondary">Ver</a>';
     
     $nuevoElem["accion"] =
     '<button class="btn btn-warning" id="edit-' . $elem->getId() . '" onclick="editMenu();">
