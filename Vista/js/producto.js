@@ -67,7 +67,7 @@ $("#form-abm").validate({
         cantstock: {
             required: "Obligatorio",
             number: "Debe ingresar un número válido",
-            min: "Debe igual o mayor a 0",
+            min: "Debe igual o mayor a 1",
         },
         imagen: {
             accept: "Formato aceptado: .jpg"

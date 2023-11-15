@@ -43,7 +43,15 @@ $("#form-abm2").validate({
         $(element).addClass("is-valid");
     },
     submitHandler: function(e) {
+        //agregue validacion para que si la cantidad es cero no lo agregue al carrito
+        
+        var cantidad = parseInt($("#cantidad").val());
+        if (cantidad <= 0) {
+            $("#erroresA").html(mostrarError("La cantidad debe ser mayor a cero."));
+            return false; // Detiene el envío del formulario
+    }
         $.ajax({
+        
             url: "../carrito/accion/altaCompraItem.php",
             type: "POST",
             data: $("#form-abm2").serialize(),

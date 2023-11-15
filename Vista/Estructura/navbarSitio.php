@@ -116,8 +116,8 @@
                         </div>
                         <div class="col-12 mb-2">
                             <label for="mail" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" name="mail" id="mail">
-                            <div class="invalid-feedback" id="feedback-mail"></div>
+                            <input type="email" class="form-control" name="mail" id="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                            <div class="invalid-feedback" id="feedback-mail"> Por favor, introduce un correo electrónico válido.</div>
                         </div>
                         <div class="col-12 mb-2" id="password-field">
                             <label for="pass" class="form-label">Contraseña</label>

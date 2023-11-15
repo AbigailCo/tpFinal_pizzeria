@@ -22,7 +22,7 @@ foreach ($arregloRoles as $rol) {
             if($permiso->getObjMenu()->getDescripcion() != "../Perfil/index.php" && $permiso->getObjMenu()->getDescripcion() != "../pago/index.php"){
                 $menu .= '
                     <div class="col-12 mb-2">
-                        <a href="' . $permiso->getObjMenu()->getDescripcion() . '" class="btn text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-right-fill mb-1" viewBox="0 0 16 16">
+                        <a href="' . $permiso->getObjMenu()->getDescripcion() . '" class="btn text-success"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-caret-right-fill mb-1" viewBox="0 0 16 16">
                             <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
                         </svg>
                             <h4 class="d-inline mx-3">' . $permiso->getObjMenu()->getNombre() . '</h4>
@@ -63,10 +63,6 @@ foreach ($arregloRoles as $rol) {
         <hr>
         <?php echo $menu; ?>
         <hr>
-        <div class="col-12 mb-1 mx-2">
-            <a href="../Perfil/index.php
-            " class="text-decoration-none text-dark">Editar Perfil</a>
-        </div>
         <div class="col-12 mb-1 mx-2">
             <a href="../perfil/accion/cerrarSesion.php" class="text-decoration-none text-danger">Cerrar Sesión</a>
         </div>
