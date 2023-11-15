@@ -1,5 +1,5 @@
 <?php
-$titulo = "SLASH";
+$titulo = "Resultado de Busqueda";
 include_once "../Estructura/headerInseguro.php";
 
 $param = data_submitted();
