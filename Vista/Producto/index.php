@@ -9,10 +9,11 @@ $producto = $objC->buscar($param);
 
 // Armado de destacados
 $colecProductos = $objC->buscar(null);
-unset($colecProductos[$producto[0]->getId()-1]); // Para evitar que salga el producto actual
+unset($colecProductos[$producto[0]->getId()-1]); // Para evitar que aparezca el producto actual en la seccion "Le podria interesar"
+//elijo 3 pizzas random para mostrar excepto la que quiero agregar al carrito
 $destacados = array_rand($colecProductos, 3);
 $recomendaciones = "";
-
+//aca itero sobre $destacados que seria la seccion "Le podria interesar"
 foreach ($destacados as $productoKey) {
     $recomendacionesImg = "../../Control/img_productos/". md5($colecProductos[$productoKey]->getId()) . ".jpg";
     $recomendacionesImg = (file_exists($recomendacionesImg)) ? $recomendacionesImg : "../img/product-placeholder.jpg";
@@ -40,6 +41,7 @@ foreach ($destacados as $productoKey) {
     <div id="exito"></div>
     <div id="erroresA"></div>
     <?php
+    //verifico que $producto este definido y no sea nulo. 
     if (!isset($producto)) {
         echo mostrarError('El producto no fue encontrado.<br>
         <a href="../Home/index.php">Volver al menu principal</a>');
@@ -51,7 +53,7 @@ foreach ($destacados as $productoKey) {
         $precio = $detalle[0];
         $detalles = $detalle[1];
         
-
+        //si el usuario inicio sesion, se agrega al carrito, sino se abre el modal/popup de inicio de sesion
         $boton = ($iniciada) ?
             '<button class="btn btn-primary col-12 my-2" type="submit" id="btn-submit2">Agregar al Carrito</button>' :
             '<button class="btn btn-primary col-12 my-2" data-bs-toggle="modal" href="#inicioSesion" role="button" aria-controls="modal">Agregar al Carrito</button>';
@@ -87,16 +89,21 @@ foreach ($destacados as $productoKey) {
                     </div>
 
                 </form>
+                
+            </div>
+            <div class="col-12 rounded bg-light p-5 mb-5">
+                <h4>Detalles del Producto</h4>
+                ' . $detalles . '
             </div>
             <h3 class="mb-4">Le podría interesar</h3>
             <div class="row col-12 mb-5 mx-auto">
             ' . $recomendaciones . '
             </div>
-
+            <!-- inicio prueba - subi este div para que este abajo del producto
             <div class="col-12 rounded bg-light p-5 mb-5">
                 <h4>Detalles del Producto</h4>
                 ' . $detalles . '
-            </div>
+            </div> fin prueba-->
         </div>
     </div>';
     }

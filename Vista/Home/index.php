@@ -4,9 +4,9 @@ include_once "../Estructura/headerInseguro.php";
 
 $objC = new AbmProducto();
 $colecProductos = $objC->buscar(null);
-
+//selecciono aleatoriamente 6 productos de la colección y los almaceno en $destacados
 $destacados = array_rand($colecProductos, 6);
-
+//$colecRecientes contiene los últimos 3 productos de la colección.
 $colecRecientes = array();
 $colecRecientes[] = $colecProductos[count($colecProductos) - 1];
 $colecRecientes[] = $colecProductos[count($colecProductos) - 2];
@@ -14,6 +14,7 @@ $colecRecientes[] = $colecProductos[count($colecProductos) - 3];
 
 ?>
 <!-- Contenido -->
+<!--este carousel es de bootstrap-->
 <main class="col-12 mx-auto">
     <div id="carouselExampleIndicators" class="carousel slide mx-auto shadow" data-bs-ride="carousel" style="max-width:1400px;">
         <div class="carousel-indicators">
@@ -46,9 +47,11 @@ $colecRecientes[] = $colecProductos[count($colecProductos) - 3];
         <div class="row col-12 mb-5 mx-auto">
             <?php
             foreach ($destacados as $productoKey) {
+                //Construyo una ruta de archivo para la img del producto. Uso la función md5() para generar un hash único basado en el ID del producto.
                 $imagen = "../../Control/img_productos/". md5($colecProductos[$productoKey]->getId()) . ".jpg";
+                //Verifico si el archivo definido en la variable $imagen existe en el sistema de archivos. Si es false-> le asigo lo que esta en /img/product-placeholder.jpg
                 $imagen = (file_exists($imagen)) ? $imagen : "../img/product-placeholder.jpg";
-
+                //Tomo el detalle del producto y lo divido en partes usando el separador "///" con la función explode()
                 $detalle = explode("///",$colecProductos[$productoKey]->getDetalle());
                 $precio = $detalle[0];
             
