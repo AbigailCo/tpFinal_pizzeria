@@ -92,11 +92,6 @@ $colecRecientes[] = $colecProductos[count($colecProductos) - 3];
             }
             ?>
         </div>
-        <h3 class="text-center mb-4">Visitanos</h3>
-        <div style="width: 100%">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3101.641968118809!2d-68.05646602469152!3d-38.97784257170697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x960a33959fafd205%3A0x8278a0736b2c49f1!2sLos%20Carritos!5e0!3m2!1ses-419!2sar!4v1699392938796!5m2!1ses-419!2sar"  width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-         
-        </div>
 
     </div>
     </div>
