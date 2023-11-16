@@ -175,9 +175,6 @@ class AbmProducto{
 
         return $resp;
     }
-
   }
-
-
 
 ?>

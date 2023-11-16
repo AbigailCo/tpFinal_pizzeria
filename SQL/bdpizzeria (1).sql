@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2023 a las 02:01:28
--- Versión del servidor: 10.4.24-MariaDB
--- Versión de PHP: 8.1.6
+-- Tiempo de generación: 10-11-2023 a las 20:15:35
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,32 +31,30 @@ CREATE TABLE `compra` (
   `idcompra` bigint(20) NOT NULL,
   `cofecha` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `idusuario` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `compra`
 --
 
 INSERT INTO `compra` (`idcompra`, `cofecha`, `idusuario`) VALUES
-(1, '2023-11-10 23:49:23', 1),
-(2, '2023-11-11 12:13:19', 2),
-(3, '2023-11-11 12:14:38', 2),
-(4, '2023-11-12 11:19:07', 2),
-(5, '2023-11-12 12:08:13', 1),
-(6, '2023-11-12 12:40:40', 1),
-(7, '2023-11-12 12:51:20', 1),
-(8, '2023-11-12 12:52:24', 1),
-(9, '2023-11-12 12:56:01', 1),
-(10, '2023-11-12 13:43:15', 1),
-(11, '2023-11-12 13:52:03', 1),
-(12, '2023-11-12 18:04:39', 1),
-(13, '2023-11-12 18:35:36', 1),
-(14, '2023-11-12 19:39:22', 7),
-(15, '2023-11-12 20:45:35', 6),
-(16, '2023-11-13 00:26:48', 2),
-(17, '2023-11-13 00:27:21', 2),
-(18, '2023-11-13 16:31:15', 1),
-(19, '2023-11-16 00:15:00', 1);
+(1, '2023-11-01 23:49:23', 1),
+(2, '2023-11-01 12:13:19', 2),
+(3, '2023-11-01 12:14:38', 2),
+(4, '2023-11-02 11:19:07', 2),
+(5, '2023-11-02 12:08:13', 1),
+(6, '2023-11-02 12:40:40', 1),
+(7, '2023-11-02 12:51:20', 1),
+(8, '2023-11-02 12:52:24', 1),
+(9, '2023-11-02 12:56:01', 1),
+(10, '2023-11-02 13:43:15', 1),
+(11, '2023-11-02 13:52:03', 1),
+(12, '2023-11-02 18:04:39', 1),
+(13, '2023-11-02 18:35:36', 1),
+(14, '2023-11-02 19:39:22', 7),
+(15, '2023-11-02 20:45:35', 6),
+(16, '2023-11-02 00:26:48', 2),
+(17, '2023-11-02 00:27:21', 2);
 
 -- --------------------------------------------------------
 
@@ -70,75 +68,66 @@ CREATE TABLE `compraestado` (
   `idcompraestadotipo` int(11) NOT NULL,
   `cefechaini` timestamp NOT NULL DEFAULT current_timestamp(),
   `cefechafin` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `compraestado`
 --
 
 INSERT INTO `compraestado` (`idcompraestado`, `idcompra`, `idcompraestadotipo`, `cefechaini`, `cefechafin`) VALUES
-(1, 1, 1, '2023-11-11 23:50:17', '2023-11-12 15:33:43'),
-(2, 2, 2, '2023-11-11 12:13:19', '2023-11-11 15:22:42'),
-(3, 3, 1, '2023-11-11 12:14:38', '2023-11-11 14:12:17'),
-(6, 3, 2, '2023-11-11 14:12:17', '2023-11-11 15:21:01'),
-(7, 3, 5, '2023-11-11 15:21:02', '2023-11-11 19:42:36'),
-(8, 2, 5, '2023-11-11 15:22:42', '0000-00-00 00:00:00'),
-(9, 1, 2, '2023-11-11 15:33:43', '2023-11-11 15:34:08'),
-(10, 1, 5, '2023-11-11 15:34:08', '2023-11-11 18:44:04'),
-(11, 1, 2, '2023-11-11 18:44:04', '2023-11-12 12:07:53'),
-(12, 3, 2, '2023-11-11 19:42:36', '2023-11-11 19:42:47'),
-(13, 3, 5, '2023-11-11 19:42:47', '0000-00-00 00:00:00'),
-(14, 4, 1, '2023-11-11 11:19:07', '2023-11-11 20:44:59'),
-(15, 1, 5, '2023-11-11 12:07:53', '0000-00-00 00:00:00'),
-(16, 5, 1, '2023-11-11 12:08:13', '2023-11-11 12:08:28'),
-(17, 5, 2, '2023-11-11 12:08:28', '2023-11-11 12:26:47'),
-(18, 5, 3, '2023-11-11 12:26:47', '2023-11-11 12:26:55'),
-(19, 5, 4, '2023-11-11 12:26:55', '2023-11-11 12:27:05'),
-(20, 5, 5, '2023-11-11 12:27:05', '2023-11-11 12:30:39'),
-(21, 6, 1, '2023-11-11 12:40:40', '2023-11-11 12:48:39'),
-(22, 6, 2, '2023-11-11 12:48:39', '2023-11-11 12:48:58'),
-(23, 6, 2, '2023-11-11 12:48:58', '2023-11-11 12:50:18'),
-(24, 6, 2, '2023-11-11 12:50:18', '2023-11-11 12:53:25'),
-(25, 7, 1, '2023-11-11 12:51:20', '2023-11-11 12:51:43'),
-(26, 7, 2, '2023-11-11 12:51:43', '2023-11-11 12:53:29'),
-(27, 8, 1, '2023-11-11 12:52:24', '2023-11-11 12:53:05'),
-(28, 8, 2, '2023-11-11 12:53:05', '2023-11-11 12:57:29'),
-(29, 6, 5, '2023-11-11 12:53:25', '0000-00-00 00:00:00'),
-(30, 7, 5, '2023-11-11 12:53:29', '0000-00-00 00:00:00'),
-(31, 9, 1, '2023-11-11 12:56:01', '2023-11-11 12:56:44'),
-(32, 9, 2, '2023-11-11 12:56:44', '2023-11-11 12:58:13'),
-(33, 8, 5, '2023-11-11 12:57:29', '0000-00-00 00:00:00'),
-(34, 9, 5, '2023-11-11 12:58:13', '0000-00-00 00:00:00'),
-(35, 10, 1, '2023-11-11 13:43:15', '2023-11-11 13:43:42'),
-(36, 10, 2, '2023-11-11 13:43:42', '2023-11-11 13:43:50'),
-(37, 10, 3, '2023-11-11 13:43:50', '2023-11-11 13:43:55'),
-(38, 10, 5, '2023-11-11 13:43:55', '0000-00-00 00:00:00'),
-(39, 11, 1, '2023-11-11 13:52:03', '2023-11-11 13:52:38'),
-(40, 11, 2, '2023-11-11 13:52:38', '2023-11-11 15:17:01'),
-(41, 11, 3, '2023-11-11 15:17:01', '2023-11-11 18:33:51'),
-(42, 12, 1, '2023-11-11 18:04:39', '2023-11-11 18:20:16'),
-(43, 12, 2, '2023-11-11 18:20:16', '2023-11-11 18:20:32'),
-(44, 12, 5, '2023-11-11 18:20:33', '0000-00-00 00:00:00'),
-(45, 11, 4, '2023-11-11 18:33:51', '2023-11-11 19:14:20'),
-(46, 13, 1, '2023-11-11 18:35:36', '2023-11-11 16:30:47'),
-(47, 14, 1, '2023-11-11 19:39:22', '2023-11-16 00:23:23'),
-(48, 4, 2, '2023-11-11 20:44:59', '2023-11-11 20:47:20'),
-(49, 15, 1, '2023-11-11 20:45:35', '0000-00-00 00:00:00'),
-(50, 4, 5, '2023-11-11 20:47:20', '0000-00-00 00:00:00'),
-(51, 16, 1, '2023-11-12 00:26:48', '2023-11-12 00:27:04'),
-(52, 16, 2, '2023-11-12 00:27:04', '2023-11-12 00:27:49'),
-(53, 17, 1, '2023-11-12 00:27:21', '0000-00-00 00:00:00'),
-(54, 16, 3, '2023-11-12 00:27:49', '2023-11-12 00:27:54'),
-(55, 16, 4, '2023-11-12 00:27:54', '2023-11-11 19:14:04'),
-(56, 13, 2, '2023-11-13 16:30:47', '2023-11-13 16:30:52'),
-(57, 13, 5, '2023-11-13 16:30:52', '0000-00-00 00:00:00'),
-(58, 18, 1, '2023-11-13 16:31:15', '2023-11-13 16:31:33'),
-(59, 18, 2, '2023-11-13 16:31:33', '0000-00-00 00:00:00'),
-(60, 16, 5, '2023-11-13 19:14:04', '0000-00-00 00:00:00'),
-(61, 11, 5, '2023-11-13 19:14:20', '0000-00-00 00:00:00'),
-(62, 19, 1, '2023-11-16 00:15:00', '0000-00-00 00:00:00'),
-(63, 14, 2, '2023-11-16 00:23:23', '2023-11-16 00:28:03'),
-(64, 14, 3, '2023-11-16 00:28:03', '0000-00-00 00:00:00');
+(1, 1, 1, '2023-11-01 23:50:17', '2023-11-01 15:33:43'),
+(2, 2, 2, '2023-11-01 12:13:19', '2023-11-01 15:22:42'),
+(3, 3, 1, '2023-11-01 12:14:38', '2023-11-01 14:12:17'),
+(6, 3, 2, '2023-11-01 14:12:17', '2023-11-01 15:21:01'),
+(7, 3, 5, '2023-11-01 15:21:02', '2023-11-01 19:42:36'),
+(8, 2, 5, '2023-11-01 15:22:42', '0000-00-00 00:00:00'),
+(9, 1, 2, '2023-11-01 15:33:43', '2023-11-01 15:34:08'),
+(10, 1, 5, '2023-11-01 15:34:08', '2023-11-01 18:44:04'),
+(11, 1, 2, '2023-11-01 18:44:04', '2023-11-04 12:07:53'),
+(12, 3, 2, '2023-11-02 19:42:36', '2023-11-02 19:42:47'),
+(13, 3, 5, '2023-11-02 19:42:47', '0000-00-00 00:00:00'),
+(14, 4, 1, '2023-11-04 11:19:07', '2023-11-04 20:44:59'),
+(15, 1, 5, '2023-11-01 12:07:53', '0000-00-00 00:00:00'),
+(16, 5, 1, '2023-11-04 12:08:13', '2023-11-04 12:08:28'),
+(17, 5, 2, '2023-11-04 12:08:28', '2023-11-04 12:26:47'),
+(18, 5, 3, '2023-11-04 12:26:47', '2023-11-04 12:26:55'),
+(19, 5, 4, '2023-11-04 12:26:55', '2023-11-04 12:27:05'),
+(20, 5, 5, '2023-11-04 12:27:05', '0000-00-00 00:00:00'),
+(21, 6, 1, '2023-11-04 12:40:40', '2023-11-04 12:48:39'),
+(22, 6, 2, '2023-11-04 12:48:39', '2023-11-04 12:48:58'),
+(23, 6, 2, '2023-11-04 12:48:58', '2023-11-04 12:50:18'),
+(24, 6, 2, '2023-11-04 12:50:18', '2023-11-04 12:53:25'),
+(25, 7, 1, '2023-11-04 12:51:20', '2023-11-04 12:51:43'),
+(26, 7, 2, '2023-11-04 12:51:43', '2023-11-04 12:53:29'),
+(27, 8, 1, '2023-11-04 12:52:24', '2023-11-04 12:53:05'),
+(28, 8, 2, '2023-11-04 12:53:05', '2023-11-04 12:57:29'),
+(29, 6, 5, '2023-11-04 12:53:25', '0000-00-00 00:00:00'),
+(30, 7, 5, '2023-11-04 12:53:29', '0000-00-00 00:00:00'),
+(31, 9, 1, '2023-11-04 12:56:01', '2023-11-04 12:56:44'),
+(32, 9, 2, '2023-11-04 12:56:44', '2023-11-04 12:58:13'),
+(33, 8, 5, '2023-11-04 12:57:29', '0000-00-00 00:00:00'),
+(34, 9, 5, '2023-11-04 12:58:13', '0000-00-00 00:00:00'),
+(35, 10, 1, '2023-11-04 13:43:15', '2023-11-04 13:43:42'),
+(36, 10, 2, '2023-11-04 13:43:42', '2023-11-04 13:43:50'),
+(37, 10, 3, '2023-11-04 13:43:50', '2023-11-04 13:43:55'),
+(38, 10, 5, '2023-11-04 13:43:55', '0000-00-00 00:00:00'),
+(39, 11, 1, '2023-11-04 13:52:03', '2023-11-04 13:52:38'),
+(40, 11, 2, '2023-11-04 13:52:38', '2023-11-04 15:17:01'),
+(41, 11, 3, '2023-11-04 15:17:01', '2023-11-04 18:33:51'),
+(42, 12, 1, '2023-11-04 18:04:39', '2023-11-04 18:20:16'),
+(43, 12, 2, '2023-11-04 18:20:16', '2023-11-04 18:20:32'),
+(44, 12, 5, '2023-11-04 18:20:33', '0000-00-00 00:00:00'),
+(45, 11, 4, '2023-11-04 18:33:51', '0000-00-00 00:00:00'),
+(46, 13, 1, '2023-11-04 18:35:36', '0000-00-00 00:00:00'),
+(47, 14, 1, '2023-11-04 19:39:22', '0000-00-00 00:00:00'),
+(48, 4, 2, '2023-11-01 20:44:59', '2023-11-04 20:47:20'),
+(49, 15, 1, '2023-11-04 20:45:35', '0000-00-00 00:00:00'),
+(50, 4, 5, '2023-11-04 20:47:20', '0000-00-00 00:00:00'),
+(51, 16, 1, '2023-11-05 00:26:48', '2023-11-05 00:27:04'),
+(52, 16, 2, '2023-11-05 00:27:04', '2023-11-05 00:27:49'),
+(53, 17, 1, '2023-11-02 00:27:21', '0000-00-00 00:00:00'),
+(54, 16, 3, '2023-11-02 00:27:49', '2023-11-02 00:27:54'),
+(55, 16, 4, '2023-11-02 00:27:54', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -150,7 +139,7 @@ CREATE TABLE `compraestadotipo` (
   `idcompraestadotipo` int(11) NOT NULL,
   `cetdescripcion` varchar(50) NOT NULL,
   `cetdetalle` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `compraestadotipo`
@@ -174,7 +163,7 @@ CREATE TABLE `compraitem` (
   `idproducto` bigint(20) NOT NULL,
   `idcompra` bigint(20) NOT NULL,
   `cicantidad` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `compraitem`
@@ -199,6 +188,7 @@ INSERT INTO `compraitem` (`idcompraitem`, `idproducto`, `idcompra`, `cicantidad`
 (22, 1, 12, 10),
 (23, 3, 12, 10),
 (24, 5, 12, 10),
+(27, 6, 14, 203),
 (29, 2, 13, 2),
 (30, 2, 4, 20),
 (31, 3, 16, 10),
@@ -206,10 +196,7 @@ INSERT INTO `compraitem` (`idcompraitem`, `idproducto`, `idcompra`, `cicantidad`
 (33, 4, 15, 1),
 (34, 3, 15, 1),
 (35, 6, 13, 1),
-(36, 7, 14, 1),
-(37, 2, 18, 1),
-(38, 4, 19, 2),
-(39, 3, 14, 1);
+(36, 7, 14, 1);
 
 -- --------------------------------------------------------
 
@@ -223,23 +210,23 @@ CREATE TABLE `menu` (
   `medescripcion` varchar(124) NOT NULL COMMENT 'Descripcion mas detallada del item del menu',
   `idpadre` bigint(20) DEFAULT NULL COMMENT 'Referencia al id del menu que es subitem',
   `medeshabilitado` timestamp NULL DEFAULT current_timestamp() COMMENT 'Fecha en la que el menu fue deshabilitado por ultima vez'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `menu`
 --
 
 INSERT INTO `menu` (`idmenu`, `menombre`, `medescripcion`, `idpadre`, `medeshabilitado`) VALUES
-(7, 'fasdfasdf', 'asdfasdfas', NULL, '2023-11-11 02:53:06'),
+(7, 'fasdfasdf', 'asdfasdfas', NULL, '2023-11-03 02:53:06'),
 (8, 'Usuarios', '../ABMUsuario/index.php', NULL, '0000-00-00 00:00:00'),
-(9, 'Roles y Permisos', 'Panel de administración de roles y permisos', 7, '2023-11-11 03:03:14'),
-(10, 'maam', 'kkkkk', NULL, '2023-11-11 02:40:23'),
+(9, 'Roles y Permisos', 'Panel de administración de roles y permisos', 7, '2023-11-06 03:03:14'),
+(10, 'maam', 'kkkkk', NULL, '2023-11-03 02:40:23'),
 (11, 'Roles y Permisos', '../ABMRol/index.php', NULL, '0000-00-00 00:00:00'),
 (15, 'Menús', '../ABMMenu/index.php', NULL, '0000-00-00 00:00:00'),
-(16, 'Productos', '../Producto/index.php', NULL, '2023-11-11 14:22:48'),
+(16, 'Productos', '../Producto/index.php', NULL, '2023-11-07 14:22:48'),
 (17, 'Productos', '../ABMProducto/index.php', NULL, '0000-00-00 00:00:00'),
 (18, 'Carrito', '../Carrito/index.php', NULL, '0000-00-00 00:00:00'),
-(19, 'Editar Perfil', '../Perfil/index.php', NULL, '2023-11-11 04:44:24'),
+(19, 'Editar Perfil', '../Perfil/index.php', NULL, '2023-11-08 04:44:24'),
 (20, 'Editar Perfil', '../Perfil/index.php', NULL, '0000-00-00 00:00:00'),
 (21, 'Pago', '../pago/index.php', NULL, '0000-00-00 00:00:00'),
 (22, 'Pedidos', '../Pedidos/index.php', NULL, '0000-00-00 00:00:00'),
@@ -254,7 +241,7 @@ INSERT INTO `menu` (`idmenu`, `menombre`, `medescripcion`, `idpadre`, `medeshabi
 CREATE TABLE `menurol` (
   `idmenu` bigint(20) NOT NULL,
   `idrol` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `menurol`
@@ -271,7 +258,8 @@ INSERT INTO `menurol` (`idmenu`, `idrol`) VALUES
 (20, 3),
 (21, 3),
 (22, 3),
-(23, 2);
+(23, 2),
+(23, 1);
 
 -- --------------------------------------------------------
 
@@ -284,7 +272,7 @@ CREATE TABLE `producto` (
   `pronombre` varchar(250) NOT NULL,
   `prodetalle` varchar(512) NOT NULL,
   `procantstock` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `producto`
@@ -292,12 +280,12 @@ CREATE TABLE `producto` (
 
 INSERT INTO `producto` (`idproducto`, `pronombre`, `prodetalle`, `procantstock`) VALUES
 (1, 'COMBO 1 - 2 mozzarellas + un voucher de regalo', '4500///Comprando 2 muzzarella te regalamos un voucher.\r\nMUZZARELLA\r\nEs una receta compuesta por una masa baja y crocante con una cubierta de salsa de tomate, mozzarella, aceitunas y orégano.\r\n\r\nVoucher de cualquier bebida de nuestro stock', 10),
-(2, 'COMBO 2 - Caprese + doble pinta', '5000///Una exquisita mezcla de queso mozzarella, tomate cherry y shot de pesto. Pide esta bomba de sabor en sus diversos tamaños: mediano, familiar o XL. Para delivery o retiro en tienda.', 19),
-(3, 'COMBO 3 - Jamon y queso + doble pinta + coca-cola 1ltr', '7000///PIZZA ORIGINALE JAMÓN Y QUESO\r\nLa pizza clásica, de masa fina y crujiente, elaborada con jamón cocido extra y fundentes prelas de mozzarella.', 49),
+(2, 'COMBO 2 - Caprese + doble pinta', '5000///Una exquisita mezcla de queso mozzarella, tomate cherry y shot de pesto. Pide esta bomba de sabor en sus diversos tamaños: mediano, familiar o XL. Para delivery o retiro en tienda.', 20),
+(3, 'COMBO 3 - Jamon y queso + doble pinta + coca-cola 1ltr', '7000///PIZZA ORIGINALE JAMÓN Y QUESO\r\nLa pizza clásica, de masa fina y crujiente, elaborada con jamón cocido extra y fundentes prelas de mozzarella.', 40),
 (4, 'VEGETARIANA | base pizza - cebolla - pimiento verde rojo - champiñones - aceitunas negras - queso mozarella - tomate frito - orégano', '5000/// Pizza elaborada solo con verduras y vegetales sin cárnico alguno, para satisfacer las necesidades del público vegetariano, sin embargo es sin duda un plato exquisito. Se puede preparar con o sin salsa de tomate.', 30),
 (5, 'NAPOLITANA | Masa de pizza - tomates - queso mozzarella - Hojas de albahaca fresca - Aceite de oliva virgen extra', '8000///La pizza napolitana se caracteriza por tener una masa fina pero esponjosa, con un borde alto, aireado y crujiente. En la región de Nápoles utilizan unos tomates conocidos como “San Marzano”, que le aportan un sabor dulce y potente a la salsa. Este tipo de tomate suele usarse también para otras preparaciones clásicas de la gastronomía italiana. ', 100),
-(6, 'ANCHOAS | Masa  madre - salsa - queso mozzarella - anchoas - olivas neras', '9000///Es una masa básica para pizzas. Lleva salsa de tomate, queso mozzarella y anchoas. Las anchoas es lo que hace especial a esta pizza. Riquísima e ideal para agasajar a los amigos, compartir en familia e incluso para hacerla en forma de pizzetas individuales.', 112),
-(7, 'JAMON Y MORRONES | masa madre a la piedra - mozzarella - jamón cocido - morrón - aceitunas verdes - orégano', '7000///*agregar des*', 19);
+(6, 'ANCHOAS | Masa  madre - salsa - queso mozzarella - anchoas - olivas neras', '9000///Es una masa básica para pizzas. Lleva salsa de tomate, queso mozzarella y anchoas. Las anchoas es lo que hace especial a esta pizza. Riquísima e ideal para agasajar a los amigos, compartir en familia e incluso para hacerla en forma de pizzetas individuales.', 100),
+(7, 'JAMON Y MORRONES | masa madre a la piedra - mozzarella - jamón cocido - morrón - aceitunas verdes - orégano', '7000///*agregar des*', 20);
 
 -- --------------------------------------------------------
 
@@ -308,7 +296,7 @@ INSERT INTO `producto` (`idproducto`, `pronombre`, `prodetalle`, `procantstock`)
 CREATE TABLE `rol` (
   `idrol` bigint(20) NOT NULL,
   `roldescripcion` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `rol`
@@ -331,7 +319,7 @@ CREATE TABLE `usuario` (
   `uspass` varchar(150) NOT NULL,
   `usmail` varchar(50) NOT NULL,
   `usdeshabilitado` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `usuario`
@@ -341,7 +329,7 @@ INSERT INTO `usuario` (`idusuario`, `usnombre`, `uspass`, `usmail`, `usdeshabili
 (1, 'abi', '25d55ad283aa400af464c76d713c07ad', 'abi@mail.com', '0000-00-00 00:00:00'),
 (2, 'mel', '25d55ad283aa400af464c76d713c07ad', 'mel@gmail.com', '0000-00-00 00:00:00'),
 (3, 'fran', '25d55ad283aa400af464c76d713c07ad', 'fran@empleado.com', '0000-00-00 00:00:00'),
-(4, 'santi', '25d55ad283aa400af464c76d713c07ad', 'santi@test.com', '2023-11-16 22:09:49'),
+(4, 'santi', '25d55ad283aa400af464c76d713c07ad', 'santi@test.com', '2023-11-06 22:09:49'),
 (6, 'repo', '25d55ad283aa400af464c76d713c07ad', 'repo2018@gmail.com', '0000-00-00 00:00:00'),
 (7, 'cliente', '25d55ad283aa400af464c76d713c07ad', 'cliente@mail.com', '0000-00-00 00:00:00');
 
@@ -354,7 +342,7 @@ INSERT INTO `usuario` (`idusuario`, `usnombre`, `uspass`, `usmail`, `usdeshabili
 CREATE TABLE `usuariorol` (
   `idusuario` bigint(20) NOT NULL,
   `idrol` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Volcado de datos para la tabla `usuariorol`
@@ -458,19 +446,19 @@ ALTER TABLE `usuariorol`
 -- AUTO_INCREMENT de la tabla `compra`
 --
 ALTER TABLE `compra`
-  MODIFY `idcompra` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `idcompra` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `compraestado`
 --
 ALTER TABLE `compraestado`
-  MODIFY `idcompraestado` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `idcompraestado` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT de la tabla `compraitem`
 --
 ALTER TABLE `compraitem`
-  MODIFY `idcompraitem` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `idcompraitem` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `menu`

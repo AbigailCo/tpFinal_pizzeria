@@ -316,7 +316,35 @@ class AbmCompra{
         return $arreglo;
     }
 
-
+    /**
+     * 
+     */
+    public function accionPago($param){
+        $resultado = false;
+        $objControl = new AbmCompra();
+    
+        // Cambio de estado de la compra a "iniciada"
+        $param["idcompraestadotipo"] = 2; // iniciada
+        $resultado = $this->cambiarEstado($param);
+    
+        if ($resultado) {
+            $abmProducto = new AbmProducto();
+    
+            $list = $this->buscarItems($param);
+    
+            if (isset($list)) {
+                foreach ($list as $item) {
+                    $abmProducto->cambiarStock([
+                        "id" => $item->getObjProducto()->getId(),
+                        "cantidad" => $item->getCantidad(),
+                        "operacion" => "resta"
+                    ]);
+                }
+            }
+        }
+    
+        return $resultado;
+    }
 
 
 
